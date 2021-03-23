@@ -38,4 +38,7 @@ main * {
 footer {
     height: 10vh;
     background-color: #c3cfd9; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
