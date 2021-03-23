@@ -1,9 +1,8 @@
 #main_header {
-    background: url("../imgs/barbell-640-425.jpg") #64727f;
+    background-image: linear-gradient(rgb(176 176 176 / 50%), rgb(156 151 151 / 50%)), url(../imgs/barbell-640-425.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-blend-mode: multiply;
     height: 25vh;
     display: flex;
     justify-content: center;
