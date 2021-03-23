@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #main_header {
@@ -17,12 +18,24 @@
 
 h1 {
     color: white;
-    font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 }
 
 input, select {
-    width: 25%;
+    width: 50%;
+}
+
+h2, input, select {
+    margin-top: 1.5em;
+    color: #293845;
+}
+
+input[type=submit] {
+    background-color: #6558f5;
+    color: #fff;
+    padding: 0.8em;
+    border-radius: 0.5em;
+    border: 0;
 }
 
 main {
