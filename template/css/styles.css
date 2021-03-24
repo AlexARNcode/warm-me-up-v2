@@ -11,7 +11,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 30vh;
+    height: 35vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,10 +56,10 @@ input[type=submit] {
 }
 
 main {
-    height: 60vh;
+    height: 55vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
 }
 
