@@ -9,7 +9,6 @@ body {
 #main_header {
     background-image: linear-gradient(rgb(176 176 176 / 50%), rgb(156 151 151 / 50%)), url(../imgs/barbell-640-425.jpg);
     background-repeat: no-repeat;
-    background-position: center;
     background-size: cover;
     height: 35vh;
     display: flex;
@@ -20,14 +19,14 @@ body {
 h1 {
     color: white;
     font-size: 2em;
-    font-weight: bolder;
+    font-weight: 300;
 }
 
 h2 {
-    font-size: 1.3em;
-    font-weight: bolder;
-    padding-top: 1.3em;
+    font-size: 1.2em;
+    padding-top: 1.5em;
     padding-bottom: 1em;
+    font-weight: bolder;
 }
 
 input, select {
