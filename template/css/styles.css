@@ -54,6 +54,11 @@ input[type=submit] {
     border: 0;
 }
 
+input[type=submit]:hover {
+    background-color: #4e3ef5;
+    cursor: pointer;
+}
+
 main {
     height: 55vh;
     display: flex;
@@ -80,4 +85,17 @@ footer {
 footer p {
     color: #303f4c;
     font-size: 0.8em;
+}
+
+/* Results */
+#result-line {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    border-bottom: 2px solid #c3cfd9;
+    padding: 0.5em;
+}
+
+strong {
+    font-weight: bold;
 }
