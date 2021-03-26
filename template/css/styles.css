@@ -133,3 +133,20 @@ strong {
     display: flex;
     align-items: center;
 }
+
+/* Responsive Design */
+/* For desktop: */
+@media only screen and (min-width: 768px) {
+    /* Top Header */
+    #main_header {
+        background-image: linear-gradient(rgb(176 176 176 / 50%), rgb(156 151 151 / 50%)), url(../imgs/barbell-large.jpg);
+        background-size:cover;
+        background-position:bottom;
+    }
+}
+
+/* For tablets: */
+@media only screen and (min-width: 600px) {
+
+
+  }
