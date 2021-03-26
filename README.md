@@ -13,3 +13,5 @@ Warm-Me-Up est une mini-application web qui calcule des séries d'échauffement 
 ## En cours de développement
 
 Cette appli est en cours de développement, pour l'instant seule l'intégration HTML / CSS a été faite.
+
+En cours : media-queries CSS pour adapter l'affichage de l'application sur écrans d'ordinateurs (actuellement l'appli ne s'affiche correctement que en format mobile).
