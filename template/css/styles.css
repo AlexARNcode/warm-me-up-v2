@@ -28,6 +28,15 @@ a {
     align-items: center;
 }
 
+/* Main part */
+main {
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
 /* Titles */
 h1 {
     color: white;
@@ -63,7 +72,6 @@ select, input {
     border-radius: 0.3em;
 }
 
-
 input[type=submit] {
     background-color: #6558f5;
     color: #fff;
@@ -76,14 +84,6 @@ input[type=submit]:hover {
     cursor: pointer;
 }
 
-main {
-    height: 55vh;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-}
-
 form {
     display: flex;
     flex-direction: column;
@@ -91,6 +91,7 @@ form {
     width: 70%;
 }
 
+/* Footer */
 footer {
     height: 10vh;
     background-color: #c3cfd9; 
