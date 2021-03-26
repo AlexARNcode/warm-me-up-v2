@@ -96,6 +96,10 @@ footer p {
     padding: 0.5em;
 }
 
+.first-line{
+    border-top: 2px solid #c3cfd9;
+}
+
 strong {
     font-weight: bold;
 }
