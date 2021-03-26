@@ -1,3 +1,4 @@
+/* General */
 * {
     box-sizing: border-box;
 }
@@ -6,6 +7,17 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+h2, h3, input, select, p {
+    color: #293845;
+}
+
+a {
+    color: #1aae9f;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+/* Top Header */
 #main_header {
     background-image: linear-gradient(rgb(176 176 176 / 50%), rgb(156 151 151 / 50%)), url(../imgs/barbell-640-425.jpg);
     background-repeat: no-repeat;
@@ -16,6 +28,7 @@ body {
     align-items: center;
 }
 
+/* Titles */
 h1 {
     color: white;
     font-size: 2em;
@@ -36,14 +49,11 @@ h3 {
 
 }
 
+/* Form elements */
 input, select {
     width: 50%;
     margin: 1em;
     width: 75%;
-}
-
-h2, h3, input, select, p {
-    color: #293845;
 }
 
 select, input {
@@ -103,6 +113,10 @@ footer p {
     padding: 0.5em;
 }
 
+section > p:first-child {
+    font-size: 0.8em;
+}
+
 .first-line{
     border-top: 2px solid #c3cfd9;
     margin-top: 1em;
@@ -110,4 +124,11 @@ footer p {
 
 strong {
     font-weight: bold;
+}
+
+#new-warm-up {
+    margin-top: 2em;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
