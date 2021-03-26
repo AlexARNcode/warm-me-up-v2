@@ -25,8 +25,15 @@ h1 {
 h2 {
     font-size: 1.2em;
     padding-top: 1.5em;
-    padding-bottom: 1em;
+    padding-bottom: 0.5em;
     font-weight: bolder;
+}
+
+h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding-bottom: 1em;
+
 }
 
 input, select {
@@ -35,7 +42,7 @@ input, select {
     width: 75%;
 }
 
-h2, input, select {
+h2, h3, input, select, p {
     color: #293845;
 }
 
@@ -98,6 +105,7 @@ footer p {
 
 .first-line{
     border-top: 2px solid #c3cfd9;
+    margin-top: 1em;
 }
 
 strong {
