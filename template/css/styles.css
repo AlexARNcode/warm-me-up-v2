@@ -114,8 +114,10 @@ footer p {
     padding: 0.5em;
 }
 
-section > p:first-child {
+section#result-line > p:first-child {
     font-size: 0.8em;
+    position: absolute;
+    left: 1.5em;
 }
 
 .first-line{
