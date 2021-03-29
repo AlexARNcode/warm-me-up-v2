@@ -1,5 +1,8 @@
 const app = {
     init: function () {
+        // Percentage : reps (55 : 8 -> "55%" of the working weight for 8 reps)
+        warmupReps = [8, 5, 3, 1];
+        warmumPercentage = [55, 70, 80, 90];
         // call handleCalculateSubmit when "Calculate" button is clicked
         const calculateBtn = document.querySelector('#calculateBtn');
         calculateBtn.addEventListener('click', app.handleCalculateSubmit)
@@ -7,12 +10,24 @@ const app = {
     handleCalculateSubmit: function (evt) {
         evt.preventDefault();
 
-        const exerciseName = document.querySelector('#exerciseName').value;
-        const workWeight = document.querySelector('#workWeight').value;
+        // Get exercise name and work weight
+        const exerciseName = document.querySelector('#exerciseName');
+        const workWeight = document.querySelector('#workWeight');
 
-        console.log (exerciseName + ' -> ' + workWeight);
+        // Calculate warm up sets
+        app.calculateWarmupSets();
+    },
+    calculateWarmupSets() {
+        const firstWarmUpSerieWeight = workWeight.value * warmumPercentage[0] / 100;
+        const secondWarmUpSerieWeight = workWeight.value * warmumPercentage[1] / 100;
+        const thidWarmUpSerieWeight = workWeight.value * warmumPercentage[2] / 100;
+        const fourthWarmUpSerieWeight = workWeight.value * warmumPercentage[3] / 100;
+        console.log('Warm up serie 1 (' + exerciseName.value + ') : '  + firstWarmUpSerieWeight + 'kgs' + ' for ' + warmupReps[0] + ' reps.');
+        console.log('Warm up serie 2 (' + exerciseName.value + ') : '  + secondWarmUpSerieWeight + 'kgs' + ' for ' + warmupReps[1] + ' reps.');
+        console.log('Warm up serie 3 (' + exerciseName.value + ') : '  + thidWarmUpSerieWeight + 'kgs' + ' for ' + warmupReps[2] + ' reps.');
+        console.log('Warm up serie 4 (' + exerciseName.value + ') : '  + fourthWarmUpSerieWeight + 'kgs' + ' for ' + warmupReps[3] + ' reps.');
 
-
+        // TODO : Même chose avec une boucle.
     }
 }
 
