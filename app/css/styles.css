@@ -1,0 +1,152 @@
+/* General */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h2, h3, input, select, p {
+    color: #293845;
+}
+
+a {
+    color: #1aae9f;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+/* Top Header */
+#main_header {
+    background-image: linear-gradient(rgb(176 176 176 / 50%), rgb(156 151 151 / 50%)), url(../imgs/barbell-640-425.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main part */
+main {
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Titles */
+h1 {
+    color: white;
+    font-size: 2em;
+    font-weight: 300;
+}
+
+h2 {
+    font-size: 1.2em;
+    padding-top: 1.5em;
+    padding-bottom: 0.5em;
+    font-weight: bolder;
+}
+
+h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding-bottom: 1em;
+
+}
+
+/* Form elements */
+input, select {
+    width: 50%;
+    margin: 1em;
+    width: 75%;
+}
+
+select, input {
+    background-color: #fff;
+    padding: 0.8em;
+    border: 1px solid #c5ced5;
+    border-radius: 0.3em;
+}
+
+input[type=submit] {
+    background-color: #6558f5;
+    color: #fff;
+    border-radius: 0.5em;
+    border: 0;
+}
+
+input[type=submit]:hover {
+    background-color: #4e3ef5;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 70%;
+}
+
+/* Footer */
+footer {
+    height: 10vh;
+    background-color: #c3cfd9; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    color: #303f4c;
+    font-size: 0.8em;
+}
+
+/* Results */
+#result-line {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    border-bottom: 2px solid #c3cfd9;
+    padding: 0.5em;
+}
+
+section > p:first-child {
+    font-size: 0.8em;
+}
+
+.first-line{
+    border-top: 2px solid #c3cfd9;
+    margin-top: 1em;
+}
+
+strong {
+    font-weight: bold;
+}
+
+#new-warm-up {
+    margin-top: 2em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Responsive Design */
+/* For desktop: */
+@media only screen and (min-width: 768px) {
+    /* Top Header */
+    #main_header {
+        background-image: linear-gradient(rgb(176 176 176 / 50%), rgb(156 151 151 / 50%)), url(../imgs/barbell-large.jpg);
+        background-size:cover;
+        background-position:bottom;
+    }
+}
+
+/* For tablets: */
+@media only screen and (min-width: 600px) {
+
+
+  }
