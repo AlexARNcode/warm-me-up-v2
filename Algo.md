@@ -1,15 +1,18 @@
 # Valeurs par défaut
 La form est en --active
 La section id=result-page ne l'est pas (elle est cachée)
+Le titre h3 est caché
 
 # Clic sur le bouton "Calculate"
 
-Cacher le formulaire form
-Afficher la section "result-page"
+Cacher le formulaire form : OK
+Afficher la section "result-page" : OK
+Afficher le titre h3
 
 # Clic sur "new Warm Up"
-Cacher la section "result-page"
-Afficher le formulaire form
+Cacher la section "result-page" : OK
+Afficher le formulaire form : OK
+Cacher le titre h3
 
 # Règles de calcul
 

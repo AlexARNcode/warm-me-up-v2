@@ -1,6 +1,7 @@
 const app = {
     mainForm:  document.querySelector('form'),
     resultPage: document.querySelector('#result-page'),
+    subTitle: document.querySelector('#sub-title'),
     init: function () {
         // Percentage : reps (55 : 8 -> "55%" of the working weight for 8 reps)
         warmupReps = [8, 5, 3, 1];
@@ -44,11 +45,21 @@ const app = {
         // Hide main form and Show result page
         app.showResultPage();
 
+        // Show h3 title
+        app.showSubTitle();
+
         // Calculate warm up sets
         app.calculateWarmupSets();
     },
     handleNewWarmUpClick: function () {
+        // Show main form and hide result page
         app.showMainForm();
+
+        app.hideSubTitle();
+    },
+    hideSubTitle: function () {
+        app.subTitle.classList.remove('--is-active');
+        app.subTitle.classList.add('--is-hidden');
     },
     showMainForm: function () {
         // Show main form
@@ -67,6 +78,10 @@ const app = {
         // Show result page
         app.resultPage.classList.remove('--is-hidden');
         app.resultPage.classList.add('--is-active');
+    },
+    showSubTitle: function() {
+        app.subTitle.classList.remove('--is-hidden');
+        app.subTitle.classList.add('--is-active');
     }
 }
 
