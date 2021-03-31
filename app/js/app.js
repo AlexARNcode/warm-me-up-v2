@@ -1,31 +1,17 @@
 const app = {
+    mainForm:  document.querySelector('form'),
+    resultPage: document.querySelector('#result-page'),
     init: function () {
         // Percentage : reps (55 : 8 -> "55%" of the working weight for 8 reps)
         warmupReps = [8, 5, 3, 1];
         warmumPercentage = [55, 70, 80, 90];
-        // call handleCalculateSubmit when "Calculate" button is clicked
+        // DOM elements
         const calculateBtn = document.querySelector('#calculateBtn');
+        const newWarmUpLink = document.querySelector('#new-warm-up-link');
+
+        // Listeners
         calculateBtn.addEventListener('click', app.handleCalculateSubmit)
-    },
-    handleCalculateSubmit: function (evt) {
-        evt.preventDefault();
-
-        // Get exercise name and work weight
-        const exerciseName = document.querySelector('#exerciseName');
-        const workWeight = document.querySelector('#workWeight');
-
-        // Hide main form
-        const mainForm = document.querySelector('form');
-        mainForm.classList.remove('--is-active');
-        mainForm.classList.add('--is-hidden');
-
-        // Show result page
-        const resultPage = document.querySelector('#result-page');
-        resultPage.classList.remove('--is-hidden');
-        resultPage.classList.add('--is-active');
-
-        // Calculate warm up sets
-        app.calculateWarmupSets();
+        newWarmUpLink.addEventListener('click', app.handleNewWarmUpClick);
     },
     calculateWarmupSets() {
         // const firstWarmUpSerieWeight = workWeight.value * warmumPercentage[0] / 100;
@@ -47,21 +33,41 @@ const app = {
             console.log(firstWarmUpSerieWeight);
             console.log(secondWarmUpSerieWeight);
         }
+    },
+    handleCalculateSubmit: function (evt) {
+        evt.preventDefault();
+
+        // Get exercise name and work weight
+        const exerciseName = document.querySelector('#exerciseName');
+        const workWeight = document.querySelector('#workWeight');
+
+        // Hide main form and Show result page
+        app.showResultPage();
+
+        // Calculate warm up sets
+        app.calculateWarmupSets();
+    },
+    handleNewWarmUpClick: function () {
+        app.showMainForm();
+    },
+    showMainForm: function () {
+        // Show main form
+        app.mainForm.classList.remove('--is-hidden');
+        app.mainForm.classList.add('--is-active');
+
+        // Hide result page
+        app.resultPage.classList.remove('--is-active');
+        app.resultPage.classList.add('--is-hidden');
+    },
+    showResultPage: function () {
+        // Hide main form
+        app.mainForm.classList.remove('--is-active');
+        app.mainForm.classList.add('--is-hidden');
+
+        // Show result page
+        app.resultPage.classList.remove('--is-hidden');
+        app.resultPage.classList.add('--is-active');
     }
 }
 
 document.addEventListener('DOMContentLoaded', app.init);
-
-/* 
-    #1	Just the bar/very light dumbbells.	10-15	45-60 seconds
-    #2	55-60% of the weight you will be using for this exercise.	8	45-60 seconds
-    #3	70-75% of the weight you will be using for this exercise.	5	45-60 seconds
-    #4	80-85% of the weight you will be using for this exercise.	3	45-60 seconds
-    #5	90-95% of the weight you will be using for this exercise.	1	Full Amount
-
-    #1 Empty bar or ligth dumbells / 10-15 reps
-    #2 55% / 8 reps
-    #3 70% / 5 reps
-    #4 80% / 3 reps
-    #5 90%  / 1 rep
-*/
