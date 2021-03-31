@@ -134,6 +134,8 @@ strong {
     align-items: center;
 }
 
+/* Show / hide elements */
+
 /* Responsive Design */
 /* For desktop: */
 @media only screen and (min-width: 768px) {
