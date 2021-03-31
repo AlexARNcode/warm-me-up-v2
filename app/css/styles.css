@@ -89,6 +89,7 @@ form {
     flex-direction: column;
     align-items: center; 
     width: 70%;
+    text-align: center;
 }
 
 /* Footer */
@@ -135,11 +136,12 @@ strong {
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 /* Show / hide elements */
 .--is-active {
-    display: flex;
+    display: block;
 }
 
 .--is-hidden {

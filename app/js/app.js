@@ -16,11 +16,13 @@ const app = {
 
         // Hide main form
         const mainForm = document.querySelector('form');
-        mainForm.classList.remove('is--active');
+        mainForm.classList.remove('--is-active');
         mainForm.classList.add('--is-hidden');
 
         // Show result page
-
+        const resultPage = document.querySelector('#result-page');
+        resultPage.classList.remove('--is-hidden');
+        resultPage.classList.add('--is-active');
 
         // Calculate warm up sets
         app.calculateWarmupSets();
