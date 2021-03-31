@@ -4,15 +4,20 @@ La section id=result-page ne l'est pas (elle est cachée)
 Le titre h3 est caché
 
 # Clic sur le bouton "Calculate"
+Vérifier si l'option sélectionnée est différente de "Choose an exercise..." (valeur "default")
+Vérifier si le texte entré dans le champ texte est bien un entier
 
-Cacher le formulaire form : OK
-Afficher la section "result-page" : OK
-Afficher le titre h3
+Si les 2 sont corrects 
+    Cacher le formulaire form : OK
+    Afficher la section "result-page" : OK
+    Afficher le titre h3 : OK
+Sinon
+    Afficher un message d'erreur
 
 # Clic sur "new Warm Up"
 Cacher la section "result-page" : OK
 Afficher le formulaire form : OK
-Cacher le titre h3
+Cacher le titre h3 : OK
 
 # Règles de calcul
 

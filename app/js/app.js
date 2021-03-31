@@ -16,7 +16,7 @@ const app = {
         calculateBtn.addEventListener('click', app.handleCalculateSubmit)
         newWarmUpLink.addEventListener('click', app.handleNewWarmUpClick);
     },
-    calculateWarmupSets() {
+    calculateWarmupSets: function() {
         // const firstWarmUpSerieWeight = workWeight.value * warmumPercentage[0] / 100;
         // const secondWarmUpSerieWeight = workWeight.value * warmumPercentage[1] / 100;
         // const thidWarmUpSerieWeight = workWeight.value * warmumPercentage[2] / 100;
@@ -37,9 +37,32 @@ const app = {
             console.log(secondWarmUpSerieWeight);
         }
     },
+    checkUserInputValues: function () {
+        let exerciseChoiceIsCorrect = false;
+        let workWeightIsCorrect = false;
+
+        if (app.exerciseName.value != 'default') {
+            exerciseChoiceIsCorrect = true;
+        }
+
+        if (Number.isInteger(Number(app.workWeight.value)) && app.workWeight.value != '') {
+            workWeightIsCorrect = true;
+        }
+
+        if (exerciseChoiceIsCorrect && workWeightIsCorrect) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    },
     handleCalculateSubmit: function (evt) {
         evt.preventDefault();
-  
+
+        // Check if user value is OK
+        if (app.checkUserInputValues()) {
+            console.log('Input OK');
+
         // Hide main form and Show result page
         app.showResultPage();
 
@@ -48,6 +71,10 @@ const app = {
 
         // Calculate warm up sets
         app.calculateWarmupSets();
+        }
+        else {
+            console.log('Input incorrects');
+        }
     },
     handleNewWarmUpClick: function () {
         // Show main form and hide result page
