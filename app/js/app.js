@@ -2,6 +2,8 @@ const app = {
     mainForm:  document.querySelector('form'),
     resultPage: document.querySelector('#result-page'),
     subTitle: document.querySelector('#sub-title'),
+    workWeight: document.querySelector('#workWeight'),
+    exerciseName: document.querySelector('#exerciseName'),
     init: function () {
         // Percentage : reps (55 : 8 -> "55%" of the working weight for 8 reps)
         warmupReps = [8, 5, 3, 1];
@@ -37,11 +39,7 @@ const app = {
     },
     handleCalculateSubmit: function (evt) {
         evt.preventDefault();
-
-        // Get exercise name and work weight
-        const exerciseName = document.querySelector('#exerciseName');
-        const workWeight = document.querySelector('#workWeight');
-
+  
         // Hide main form and Show result page
         app.showResultPage();
 
@@ -82,6 +80,11 @@ const app = {
     showSubTitle: function() {
         app.subTitle.classList.remove('--is-hidden');
         app.subTitle.classList.add('--is-active');
+
+        // Get the text value of the selected exercise name
+        const exerciseNameSelectText = app.exerciseName.options[app.exerciseName.selectedIndex].text;
+        // Modify the subtitle following : Squat - 70 kgs | Exercice - x kgs
+        app.subTitle.innerHTML = exerciseNameSelectText + ' - ' + app.workWeight.value + "kg";
     }
 }
 
