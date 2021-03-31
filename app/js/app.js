@@ -14,20 +14,37 @@ const app = {
         const exerciseName = document.querySelector('#exerciseName');
         const workWeight = document.querySelector('#workWeight');
 
+        // Hide main form
+        const mainForm = document.querySelector('form');
+        mainForm.classList.remove('is--active');
+        mainForm.classList.add('--is-hidden');
+
+        // Show result page
+
+
         // Calculate warm up sets
         app.calculateWarmupSets();
     },
     calculateWarmupSets() {
-        const firstWarmUpSerieWeight = workWeight.value * warmumPercentage[0] / 100;
-        const secondWarmUpSerieWeight = workWeight.value * warmumPercentage[1] / 100;
-        const thidWarmUpSerieWeight = workWeight.value * warmumPercentage[2] / 100;
-        const fourthWarmUpSerieWeight = workWeight.value * warmumPercentage[3] / 100;
-        console.log('Warm up serie 1 (' + exerciseName.value + ') : '  + firstWarmUpSerieWeight + 'kgs' + ' for ' + warmupReps[0] + ' reps.');
-        console.log('Warm up serie 2 (' + exerciseName.value + ') : '  + secondWarmUpSerieWeight + 'kgs' + ' for ' + warmupReps[1] + ' reps.');
-        console.log('Warm up serie 3 (' + exerciseName.value + ') : '  + thidWarmUpSerieWeight + 'kgs' + ' for ' + warmupReps[2] + ' reps.');
-        console.log('Warm up serie 4 (' + exerciseName.value + ') : '  + fourthWarmUpSerieWeight + 'kgs' + ' for ' + warmupReps[3] + ' reps.');
+        // const firstWarmUpSerieWeight = workWeight.value * warmumPercentage[0] / 100;
+        // const secondWarmUpSerieWeight = workWeight.value * warmumPercentage[1] / 100;
+        // const thidWarmUpSerieWeight = workWeight.value * warmumPercentage[2] / 100;
+        // const fourthWarmUpSerieWeight = workWeight.value * warmumPercentage[3] / 100;
+        // console.log('Warm up serie 1 (' + exerciseName.value + ') : '  + firstWarmUpSerieWeight + 'kgs' + ' for ' + warmupReps[0] + ' reps.');
+        // console.log('Warm up serie 2 (' + exerciseName.value + ') : '  + secondWarmUpSerieWeight + 'kgs' + ' for ' + warmupReps[1] + ' reps.');
+        // console.log('Warm up serie 3 (' + exerciseName.value + ') : '  + thidWarmUpSerieWeight + 'kgs' + ' for ' + warmupReps[2] + ' reps.');
+        // console.log('Warm up serie 4 (' + exerciseName.value + ') : '  + fourthWarmUpSerieWeight + 'kgs' + ' for ' + warmupReps[3] + ' reps.');
 
-        // TODO : Même chose avec une boucle.
+        // TODO : Même chose avec une boucle. (En cours)
+        for (let setNumber = 0; setNumber < 4; setNumber++) {
+            const firstWarmUpSerieWeight = workWeight.value * warmumPercentage[setNumber] / 100;
+            const secondWarmUpSerieWeight = workWeight.value * warmumPercentage[setNumber] / 100;
+            const thidWarmUpSerieWeight = workWeight.value * warmumPercentage[setNumber] / 100;
+            const fourthWarmUpSerieWeight = workWeight.value * warmumPercentage[setNumber] / 100;
+
+            console.log(firstWarmUpSerieWeight);
+            console.log(secondWarmUpSerieWeight);
+        }
     }
 }
 

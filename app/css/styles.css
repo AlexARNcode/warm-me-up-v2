@@ -135,6 +135,13 @@ strong {
 }
 
 /* Show / hide elements */
+.--is-active {
+    display: flex;
+}
+
+.--is-hidden {
+    display: none;
+}
 
 /* Responsive Design */
 /* For desktop: */
