@@ -106,9 +106,12 @@ footer p {
 }
 
 /* Results */
+#result-page {
+    width: 100%;
+}
+
 #result-line {
     display: flex;
-    width: 100%;
     justify-content: space-around;
     border-bottom: 2px solid #c3cfd9;
     padding: 0.5em;
