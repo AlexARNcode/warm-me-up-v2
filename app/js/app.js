@@ -1,9 +1,10 @@
 const app = {
-    mainForm:  document.querySelector('form'),
+    mainForm: document.querySelector('form'),
     resultPage: document.querySelector('#result-page'),
     subTitle: document.querySelector('#sub-title'),
     workWeight: document.querySelector('#workWeight'),
     exerciseName: document.querySelector('#exerciseName'),
+    formErrorEl: document.querySelector('#form-errors'),
     init: function () {
         // Percentage : reps (55 : 8 -> "55%" of the working weight for 8 reps)
         warmupReps = [8, 5, 3, 1];
@@ -16,7 +17,7 @@ const app = {
         calculateBtn.addEventListener('click', app.handleCalculateSubmit)
         newWarmUpLink.addEventListener('click', app.handleNewWarmUpClick);
     },
-    calculateWarmupSets: function() {
+    calculateWarmupSets: function () {
         // const firstWarmUpSerieWeight = workWeight.value * warmumPercentage[0] / 100;
         // const secondWarmUpSerieWeight = workWeight.value * warmumPercentage[1] / 100;
         // const thidWarmUpSerieWeight = workWeight.value * warmumPercentage[2] / 100;
@@ -41,18 +42,33 @@ const app = {
         let exerciseChoiceIsCorrect = false;
         let workWeightIsCorrect = false;
 
+        // Check exercise choice
         if (app.exerciseName.value != 'default') {
             exerciseChoiceIsCorrect = true;
         }
 
+        //  Check working weight input
         if (Number.isInteger(Number(app.workWeight.value)) && app.workWeight.value != '') {
             workWeightIsCorrect = true;
         }
 
+        // Check if both are correct or not, if not, display error message depending on cases
         if (exerciseChoiceIsCorrect && workWeightIsCorrect) {
             return true;
-        }
-        else {
+        } else {
+            if (exerciseChoiceIsCorrect === false && workWeightIsCorrect === false) {
+                app.formErrorEl.innerHTML = 'Please choose an exercise and type a whole number in the text field !';
+                app.formErrorEl.classList.remove('--is-hidden');
+                app.formErrorEl.classList.add('--is-active');
+            } else if (exerciseChoiceIsCorrect === false && workWeightIsCorrect) {
+                app.formErrorEl.innerHTML = 'Please choose an exercise in the list !';
+                app.formErrorEl.classList.remove('--is-hidden');
+                app.formErrorEl.classList.add('--is-active');
+            } else if (exerciseChoiceIsCorrect && workWeightIsCorrect === false) {
+                app.formErrorEl.innerHTML = 'Please type a whole number in the text field !';
+                app.formErrorEl.classList.remove('--is-hidden');
+                app.formErrorEl.classList.add('--is-active');
+            }
             return false;
         }
     },
@@ -63,17 +79,14 @@ const app = {
         if (app.checkUserInputValues()) {
             console.log('Input OK');
 
-        // Hide main form and Show result page
-        app.showResultPage();
+            // Hide main form and Show result page
+            app.showResultPage();
 
-        // Show h3 title
-        app.showSubTitle();
+            // Show h3 title
+            app.showSubTitle();
 
-        // Calculate warm up sets
-        app.calculateWarmupSets();
-        }
-        else {
-            console.log('Input incorrects');
+            // Calculate warm up sets
+            app.calculateWarmupSets();
         }
     },
     handleNewWarmUpClick: function () {
@@ -104,7 +117,7 @@ const app = {
         app.resultPage.classList.remove('--is-hidden');
         app.resultPage.classList.add('--is-active');
     },
-    showSubTitle: function() {
+    showSubTitle: function () {
         app.subTitle.classList.remove('--is-hidden');
         app.subTitle.classList.add('--is-active');
 
