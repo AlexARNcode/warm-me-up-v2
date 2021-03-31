@@ -64,10 +64,12 @@ const app = {
                 app.formErrorEl.innerHTML = 'Please choose an exercise in the list !';
                 app.formErrorEl.classList.remove('--is-hidden');
                 app.formErrorEl.classList.add('--is-active');
+                app.exerciseName.focus();
             } else if (exerciseChoiceIsCorrect && workWeightIsCorrect === false) {
                 app.formErrorEl.innerHTML = 'Please type a whole number in the text field !';
                 app.formErrorEl.classList.remove('--is-hidden');
                 app.formErrorEl.classList.add('--is-active');
+                app.workWeight.focus();
             }
             return false;
         }
@@ -77,8 +79,6 @@ const app = {
 
         // Check if user value is OK
         if (app.checkUserInputValues()) {
-            console.log('Input OK');
-
             // Hide main form and Show result page
             app.showResultPage();
 
