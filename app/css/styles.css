@@ -5,6 +5,7 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
 }
 
 h2, h3, input, select, p {
