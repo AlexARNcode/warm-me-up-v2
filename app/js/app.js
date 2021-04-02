@@ -18,16 +18,6 @@ const app = {
         newWarmUpLink.addEventListener('click', app.handleNewWarmUpClick);
     },
     calculateWarmupSets: function () {
-        // const firstWarmUpSerieWeight = workWeight.value * warmumPercentage[0] / 100;
-        // const secondWarmUpSerieWeight = workWeight.value * warmumPercentage[1] / 100;
-        // const thidWarmUpSerieWeight = workWeight.value * warmumPercentage[2] / 100;
-        // const fourthWarmUpSerieWeight = workWeight.value * warmumPercentage[3] / 100;
-        // console.log('Warm up serie 1 (' + exerciseName.value + ') : '  + firstWarmUpSerieWeight + 'kgs' + ' for ' + warmupReps[0] + ' reps.');
-        // console.log('Warm up serie 2 (' + exerciseName.value + ') : '  + secondWarmUpSerieWeight + 'kgs' + ' for ' + warmupReps[1] + ' reps.');
-        // console.log('Warm up serie 3 (' + exerciseName.value + ') : '  + thidWarmUpSerieWeight + 'kgs' + ' for ' + warmupReps[2] + ' reps.');
-        // console.log('Warm up serie 4 (' + exerciseName.value + ') : '  + fourthWarmUpSerieWeight + 'kgs' + ' for ' + warmupReps[3] + ' reps.');
-
-        // TODO : Même chose avec une boucle. (En cours)
             const firstWarmUpSerieWeight = workWeight.value * warmumPercentage[0] / 100;
             const secondWarmUpSerieWeight = workWeight.value * warmumPercentage[1] / 100;
             const thidWarmUpSerieWeight = workWeight.value * warmumPercentage[2] / 100;
