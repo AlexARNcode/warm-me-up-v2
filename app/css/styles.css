@@ -106,6 +106,10 @@ footer p {
     font-size: 0.8em;
 }
 
+#form-errors {
+    color: red;
+}
+
 /* Results */
 #result-page {
     width: 100%;
