@@ -77,6 +77,8 @@ const app = {
     handleCalculateSubmit: function (evt) {
         evt.preventDefault();
 
+        // Remove potential error message
+        app.formErrorEl.innerHTML = '';
         // Check if user value is OK
         if (app.checkUserInputValues()) {
             // Hide main form and Show result page
