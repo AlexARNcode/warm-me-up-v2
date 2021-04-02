@@ -28,15 +28,12 @@ const app = {
         // console.log('Warm up serie 4 (' + exerciseName.value + ') : '  + fourthWarmUpSerieWeight + 'kgs' + ' for ' + warmupReps[3] + ' reps.');
 
         // TODO : Même chose avec une boucle. (En cours)
-        for (let setNumber = 0; setNumber < 4; setNumber++) {
-            const firstWarmUpSerieWeight = workWeight.value * warmumPercentage[setNumber] / 100;
-            const secondWarmUpSerieWeight = workWeight.value * warmumPercentage[setNumber] / 100;
-            const thidWarmUpSerieWeight = workWeight.value * warmumPercentage[setNumber] / 100;
-            const fourthWarmUpSerieWeight = workWeight.value * warmumPercentage[setNumber] / 100;
+            const firstWarmUpSerieWeight = workWeight.value * warmumPercentage[0] / 100;
+            const secondWarmUpSerieWeight = workWeight.value * warmumPercentage[1] / 100;
+            const thidWarmUpSerieWeight = workWeight.value * warmumPercentage[2] / 100;
+            const fourthWarmUpSerieWeight = workWeight.value * warmumPercentage[3] / 100;
 
-            console.log(firstWarmUpSerieWeight);
-            console.log(secondWarmUpSerieWeight);
-        }
+        return [firstWarmUpSerieWeight, secondWarmUpSerieWeight, thidWarmUpSerieWeight, fourthWarmUpSerieWeight];
     },
     checkUserInputValues: function () {
         let exerciseChoiceIsCorrect = false;
@@ -74,11 +71,18 @@ const app = {
             return false;
         }
     },
+    displayWarmupsInResultPage: function (calculatedWarmupsArr) {
+        document.querySelector('#first-set-weight').innerHTML = calculatedWarmupsArr[0];
+        document.querySelector('#second-set-weight').innerHTML = calculatedWarmupsArr[1];
+        document.querySelector('#third-set-weight').innerHTML = calculatedWarmupsArr[2];
+        document.querySelector('#fourth-set-weight').innerHTML = calculatedWarmupsArr[3];
+    },
     handleCalculateSubmit: function (evt) {
         evt.preventDefault();
 
         // Remove potential error message
         app.formErrorEl.innerHTML = '';
+
         // Check if user value is OK
         if (app.checkUserInputValues()) {
             // Hide main form and Show result page
@@ -88,7 +92,10 @@ const app = {
             app.showSubTitle();
 
             // Calculate warm up sets
-            app.calculateWarmupSets();
+            const calculatedWarmupsArr = app.calculateWarmupSets();
+            
+            // Display warm ups in DOM
+            app.displayWarmupsInResultPage(calculatedWarmupsArr);
         }
     },
     handleNewWarmUpClick: function () {
